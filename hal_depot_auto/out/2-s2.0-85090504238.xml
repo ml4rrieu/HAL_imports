@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
+     
+    <text>
+        <body>
+            <listBibl>
+                <biblFull>
+                    <titleStmt><funder>Agence Nationale de la Recherche, ANR: ANR-13-LAB3-0008-01  Science Foundation Ireland, SFI: 16/IA/4474  11/S/116</funder>
+						<funder>We are grateful to the Genotoul bioinformatics platform Toulouse Midi-Pyrenees (Bioinfo Genotoul) for providing computing and storage resources. Funding. This research was made possible by funding from the Irish Department of Agriculture, Food and the Marine under the Research Stimulus Fund (Project 11/S/116), from Science Foundation Ireland under the Investigators Program (Dublin, Ireland; Project 16/IA/4474), and from the French National Research Agency (grant ANR-13-LAB3-0008-01 ?SeQuaMol?).</funder>
+						</titleStmt><seriesStmt>
+                        <idno type="stamp" n="UVSQ"></idno>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note type="commentary"></note>
+                        <note type="audience" n="2"></note>
+                        <note type="popular" n="0"></note>
+                        <note type="peer" n="1"></note>
+                    </notesStmt>
+                    <sourceDesc>
+                        <biblStruct>
+                            <analytic>
+                                <title xml:lang="en">Accelerating Onset of Puberty Through Modification of Early Life Nutrition Induces Modest but Persistent Changes in Bull Sperm DNA Methylation Profiles Post-puberty</title><author role="aut"><persName><forename type="first">J.-P.</forename><surname>Perrier</surname></persName></author>
+
+							<author role="aut"><persName><forename type="first">D.A.</forename><surname>Kenny</surname></persName></author>
+
+							<author role="aut"><persName><forename type="first">A.</forename><surname>Chaulot-Talmon</surname></persName><affiliation  ref="#struct-1282"></affiliation ></author>
+
+							<author role="aut"><persName><forename type="first">C.J.</forename><surname>Byrne</surname></persName></author>
+
+							<author role="aut"><persName><forename type="first">E.</forename><surname>Sellem</surname></persName></author>
+
+							<author role="aut"><persName><forename type="first">L.</forename><surname>Jouneau</surname></persName><affiliation  ref="#struct-1282"></affiliation ></author>
+
+							<author role="aut"><persName><forename type="first">A.</forename><surname>Aubert-Frambourg</surname></persName><affiliation  ref="#struct-1282"></affiliation ></author>
+
+							<author role="aut"><persName><forename type="first">L.</forename><surname>Schibler</surname></persName></author>
+
+							<author role="aut"><persName><forename type="first">H.</forename><surname>Jammes</surname></persName><affiliation  ref="#struct-1282"></affiliation ></author>
+
+							<author role="aut"><persName><forename type="first">P.</forename><surname>Lonergan</surname></persName></author>
+
+							<author role="crp"><persName><forename type="first">S.</forename><surname>Fair</surname></persName><email>sean.fair@ul.ie</email></author>
+
+							<author role="aut"><persName><forename type="first">H.</forename><surname>Kiefer</surname></persName><affiliation  ref="#struct-1282"></affiliation ></author>
+
+							</analytic>
+                            <monogr>
+                                
+                                <idno type="halJournalId">94054</idno>
+								<imprint>
+                                    <biblScope unit="issue"></biblScope>
+                                    <biblScope unit="volume">11</biblScope>
+                                    <biblScope unit="pp"></biblScope>
+                                    <date type="datePub">2020</date>
+                                </imprint>
+                            </monogr>
+                        <idno type="doi">10.3389/fgene.2020.00945</idno></biblStruct>
+                    </sourceDesc>
+                    <profileDesc>
+                        <langUsage>
+                            <language ident="en"></language>
+                        </langUsage>
+                        <textClass>
+                            <keywords scheme="author">
+                                <term xml:lang="en">Bovine; DNA methylation; nutritional programming; puberty; spermatozoa</term>
+                            </keywords>
+                            <classCode scheme="halDomain" n="sdv"></classCode>
+                            <classCode scheme="halTypology" n="ART"></classCode>
+                        </textClass>
+                        <abstract xml:lang="en">In humans and model species, alterations of sperm DNA methylation patterns have been reported in cases of spermatogenesis defects, male infertility and exposure to toxins or nutritional challenges, suggesting that a memory of environmental or physiological changes is recorded in the sperm methylome. The objective of this study was to ascertain if early life plane of nutrition could have a latent effect on DNA methylation patterns in sperm produced post-puberty. Holstein-Friesian calves were assigned to either a high (H) or moderate (M) plane of nutrition for the first 24 weeks of age, then reassigned to the M diet until puberty, resulting in HM and MM groups. Sperm DNA methylation patterns from contrasted subgroups of bulls in the HM (ejaculates recovered at 15 months of age; n = 9) and in the MM (15 and 16 months of age; n = 7 and 9, respectively) were obtained using Reduced Representation Bisulfite Sequencing. Both 15 and 16 months were selected in the MM treatment as these bulls reached puberty approximately 1 month after the HM bulls. Hierarchical clustering demonstrated that inter-individual variability unrelated to diet or age dominated DNA methylation profiles. While the comparison between 15 and 16 months of age revealed almost no change, 580 differentially methylated CpGs (DMCs) were identified between the HM and MM groups. Differentially methylated CpGs were mostly hypermethylated in the HM group, and enriched in endogenous retrotransposons, introns, intergenic regions, and shores and shelves of CpG islands. Furthermore, genes involved in spermatogenesis, Sertoli cell function, and the hypothalamic–pituitary–gonadal axis were targeted by differential methylation when HM and MM groups were compared at 15 months of age, reflecting the earlier timing of puberty onset in the HM bulls. In contrast, the genes still differentially methylated in MM bulls at 16 months of age were enriched for ATP-binding molecular function, suggesting that changes to the sperm methylome could persist even after the HM and MM bulls reached a similar level of sexual maturity. Together, results demonstrate that enhanced plane of nutrition in pre-pubertal calves associated with advanced puberty induced modest but persistent changes in sperm DNA methylation profiles after puberty.</abstract>
+                    </profileDesc>
+                </biblFull>
+            </listBibl>
+        </body>
+    </text>
+</TEI>
