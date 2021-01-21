@@ -2,9 +2,9 @@
 
 Codes permettant : 
 
-	1. de déposer automatiquement dans HAL  à partir d'une extraction de Scopus
+	1.  de déposer automatiquement dans HAL  à partir d'une extraction de Scopus
 
-	2. d'effectuer du mailing aux auteurs pour les inviter à partager leur publication en accès ouvert si ce n'est déjà le cas.
+	2.  d'effectuer du mailing aux auteurs pour les inviter à partager leur publication en accès ouvert si ce n'est déjà le cas.
 
 
 
