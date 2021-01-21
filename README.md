@@ -3,7 +3,7 @@
 Les codes partagés permettent : 
 
 1. de déposer automatiquement dans HAL  à partir d'une extraction de Scopus
-2. d'effectuer du mailing aux auteurs pour les inviter à partager leur publication en accès ouvert si ce n'est déjà le cas.
+2. d'effectuer du mailing aux auteurs pour les inviter à partager leur publication en accès ouvert
 
 
 
@@ -16,7 +16,7 @@ Les codes partagés permettent :
 ### 0. Configuration
 - Installer python et les librairies listées dans le fichier `requirement.txt`
 - Télécharger le .zip de ce dépot et dézipper
-- Compléter le fichier `path_and_perso_data.json` avec vos informations en suivant le modèle :
+- Créer le fichier `path_and_perso_data.json`, à la racine, avec vos informations en suivant ce modèle :
 ```json
 {
 	"path_labCriteria":"chemin et nom du fichier décrivant les laboratoires de votre établissement",
@@ -65,21 +65,23 @@ Les codes partagés permettent :
 
 - Lancez le code `hal_depot_auto/code/1_from_scopus_csv_produce_TEI.py` avec le paramétrage `step = produceTei`
 
-**Récupérer les infos d'accès ouvert et verser dans HAL** 
+<br />
+
+### 4. Récupérer depuis unpaywall les infos d'accès ouvert et verser dans HAL
 
 - Lancez le code `hal_depot_auto/code/2_deposit_tei_to_hal.py`
 
 <br />
 
-### 4. Enrichir les métadonnées
+### 5. Enrichir les métadonnées
 
-- retrouver les notices importées dans HAL dans le fichier `hal_depot_auto/out/doc_imported.csv`
+- Retrouver la liste des publications importées dans le fichier `hal_depot_auto/out/doc_imported.csv`
 
-- Compléter dans HAL les lacunes d'affiliations et ajouter les emails des auteurs à contacter
+- Dans HAL compléter les lacunes d'affiliations et ajouter les emails des auteurs à contacter
 
 <br />
 
-### 4. Envoyer les emails
+### 6. Envoyer les emails
 
 - ouvrir le code  `mailing_auteur/mailing_auth.py`
 
