@@ -1,6 +1,6 @@
 # Imports automatiques dans HAL et mailing aux auteurs 
 
-Les codes partagés permettent
+Codes permettant : 
 
 	1. de déposer automatiquement dans HAL  à partir d'une extraction de Scopus
 
@@ -40,7 +40,7 @@ Les codes partagés permettent
 
 <br />
 
-### 1. Préparer les données**
+### 1. Préparer les données
 
 - Extraire une liste de publications depuis scopus (export en `csv` avec toutes les informations)
 
