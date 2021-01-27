@@ -5,13 +5,13 @@ Les codes partagés permettent :
 1. de déposer automatiquement dans HAL  à partir d'une extraction de Scopus
 2. d'effectuer du mailing aux auteurs pour les inviter à partager leur publication en accès ouvert
 
+<br />
 
+***
 
-**2021-01 version béta**
+**2021-01 version pré-alpha**
 
-# todo
-
-~~inclure les data paper~~
+**todo**
 
 alléger : path_scopusStruct2halStruct déjà dans labCriteria.csv
 
@@ -21,7 +21,9 @@ pemrettre l'envoi à plusieurs destinataires
 
 probleme avec domaine archi
 
-retirer ISSN si chapitre d'ouvreage
+retirer ISSN si chapitre d'ouvrage
+
+~~inclure les data paper~~
 
 ~~extraire le mail de l'auth correspondant~~
 
