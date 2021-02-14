@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
+     
+    <text>
+        <body>
+            <listBibl>
+                <biblFull>
+                    <titleStmt></titleStmt><seriesStmt>
+                        <idno type="stamp" n="UVSQ"></idno>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note type="commentary"></note>
+                        <note type="audience" n="2"></note>
+                        <note type="popular" n="0"></note>
+                        <note type="peer" n="1"></note>
+                    </notesStmt>
+                    <sourceDesc>
+                        <biblStruct>
+                            <analytic>
+                                <title xml:lang="en">Evidence of physical violence and torture in refugees and migrants seeking asylum in France</title><author role="crp"><persName><forename type="first">Patrícia Duarte</forename><surname>Deps</surname></persName><email>patricia.deps@ufes.br</email><affiliation  ref="#struct-579969"></affiliation ></author>
+
+							<author role="aut"><persName><forename type="first">Simon M.</forename><surname>Collin</surname></persName></author>
+
+							<author role="aut"><persName><forename type="first">Hugo Pessotti</forename><surname>Aborghetti</surname></persName></author>
+
+							<author role="aut"><persName><forename type="first">Philippe</forename><surname>Charlier</surname></persName><affiliation  ref="#struct-579969"></affiliation ></author>
+
+							</analytic>
+                            <monogr>
+                                
+                                <idno type="halJournalId">15501</idno>
+								<imprint>
+                                    <biblScope unit="issue"></biblScope>
+                                    <biblScope unit="volume">77</biblScope>
+                                    <biblScope unit="pp"></biblScope>
+                                    <date type="datePub">2021</date>
+                                </imprint>
+                            </monogr>
+                        <idno type="doi">10.1016/j.jflm.2020.102104</idno><idno type="pubmed">33338797</idno></biblStruct>
+                    </sourceDesc>
+                    <profileDesc>
+                        <langUsage>
+                            <language ident="en"></language>
+                        </langUsage>
+                        <textClass>
+                            <keywords scheme="author">
+                                <term xml:lang="en">Asylum seekers; Europe; Refugees; Torture; Violence</term>
+                            </keywords>
+                            <classCode scheme="halDomain" n="sdv"></classCode>
+                            <classCode scheme="halTypology" n="ART"></classCode>
+                        </textClass>
+                        <abstract xml:lang="en">Objectives: The increasing numbers of migrants and refugees to Europe include persons seeking asylum, many of whom will have experienced physical violence and torture. Here we describe the personal histories and clinical evidence of violence and torture among attendees at a public health specialist service in France. Methods: Physicians in a multidisciplinary team conducted examinations to corroborate refugees’ skin lesions and other signs of injury with self-reported histories of physical violence and torture to provide evidence for asylum applications. Results: The 240 asylum seekers assessed between October 2016 and September 2018 were mostly male (89% (213/240)) with median age 29 years (IQR 26–34 years) and originating from north and west Africa. Consultations took place on average 15 months after arrival in France. In most cases (58%) the reason for seeking asylum was political persecution. Almost all attendees (94%) presented with scars. The most common mechanisms of injury were beatings (84%), burns (32%) and cuts/stab wounds (15%). Sexual violence was reported for 37% of women (10/27) and 4% of men (9/213). Police tended to use multiple methods for inflicting injuries, whereas the army and non-state actors mostly inflicted beatings. Sexual violation was most commonly reported for violence inflicted by family members or partners. Corroboration of lesions with patients’ histories of physical violence and torture was affirmative in 93% (224/240) of cases. Conclusion: For this ethnically diverse group, a specialist service which can provide clinical corroboration of self-reported histories of physical violence and torture to support asylum applications is an essential minimum.</abstract>
+                    </profileDesc>
+                </biblFull>
+            </listBibl>
+        </body>
+    </text>
+</TEI>

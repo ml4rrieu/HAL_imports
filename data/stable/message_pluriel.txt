@@ -1,0 +1,20 @@
+Bonjour, 
+
+Je travaille au développement de la science ouverte à l'Université de Versailles St-Quentin-en-Yvelines et notre équipe a récemment identifié des articles dont vous êtes auteur : 
+
+${TITLE}
+
+Ceux-ci peuvent être diffusés en accès ouvert sur la plateforme HAL : la loi "Pour une république numérique" vous autorise en effet à partager 6 mois après publication [1] le manuscrit auteur accepté pour publication, c'est-à-dire la version qui précède la mise en forme éditeur [2].
+
+Nous vous invitons à ajouter les fichiers PDF de ces articles dans HAL. Pour cela dans un premier temps vous devez nous demander la propriété des notices HAL en nous indiquant l'email de votre compte HAL. Ensuite vous pourrez apporter toutes les modifications souhaitées -- ou bien, si vous préférez, transmettez-nous directement les fichiers PDF et nous les ajouterons.
+
+
+Je reste à votre disposition pour toutes questions.
+bien cordialement,
+Maxence Larrieu 
+Équipe HAL UVSQ
+DBIST
+
+[1] Le délai varie selon le domaine : 6 mois après publication pour le domaine des Sciences, de la Technique et de la Médecine et 12 pour les Sciences Humaines et Sociales. Voir la vidéo de l'université Paris-Saclay "Archives ouvertes : quid de mes droits d'auteur ?" qui contextualise ce sujet : https://youtu.be/sV-NhB7tavs
+
+[2] Voir exemple https://hal.uvsq.fr/public/postprint.pdf

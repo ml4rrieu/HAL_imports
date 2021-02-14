@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
+    <!--
+    fichier de départ : https://api.archives-ouvertes.fr/documents/art.xml
+    change made : 
+        role="resp" change to ="aut"
+        notesStmt : suppressions de l'élément ac attribute en commentaire
+        attrib xml:lang="en" mis en english
+        suppr : <idno type="localRef">LKB-FLQ</idno>
+        keywords : suppression des keywords de sorte à en laisser un seul
+        suppresion de <classCode scheme="classification">03.65.Ta, 03.65.ud, 03.67.a</classCode>
+        suppression de tout le contenu situé dessous  <back>
+            <listOrg type="structures">
+                <org type="laboratory" xml:id="struct-1"/>
+            </listOrg>
+        </back>
+     --> 
+    <text>
+        <body>
+            <listBibl>
+                <biblFull>
+                    <titleStmt>
+                        <title xml:lang="en">THIS IS A TEST OF SWORD</title>
+                        
+                        <author role="aut">
+                            <persName>
+                                <forename type="first">Franck</forename>
+                                <surname>Laloë</surname>
+                            </persName>
+                            <email>laloe@lkb.ens.fr</email>
+                            <ptr type="url" target="http://lkb.cnrs.fr"/>
+                            <affiliation ref="#struct-1"></affiliation>
+                        </author>
+                        <funder> a funding of 1 M €€</funder>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>
+                        </edition>
+                    </editionStmt>
+                    <seriesStmt>
+                        <idno type="stamp" n="LKB"/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note type="commentary"></note>
+                        <note type="audience" n="2"/>
+                        <note type="popular" n="0"/>
+                        <note type="peer" n="1"/>
+                    </notesStmt>
+                    <sourceDesc>
+                        <biblStruct>
+                            <analytic>
+                                <title xml:lang="en">TEST IMPORT TEI Python</title>
+                                <author role="aut">
+                                    <persName>
+                                    <forename type="first">Franck</forename>
+                                    <surname>Laloë</surname>
+                                    </persName>
+                                    <email>laloe@lkb.ens.fr</email>
+                                    <affiliation ref="#struct-1"></affiliation>
+                                </author>
+                            </analytic>
+                            <monogr>
+                                
+                                <imprint>
+                                    <biblScope unit="issue"></biblScope>
+                                    <biblScope unit="volume">69</biblScope>
+                                    <biblScope unit="pp"></biblScope>
+                                    <date type="datePub">2001</date>
+                                </imprint>
+                            </monogr>
+                        </biblStruct>
+                    </sourceDesc>
+                    <profileDesc>
+                        <langUsage>
+                            <language ident="en"></language>
+                        </langUsage>
+                        <textClass>
+                            <keywords scheme="author">
+                                <term xml:lang="en">foundations of quantum mechanics</term>
+                            </keywords>
+                            <classCode scheme="halDomain" n="phys.qphy"/>
+                            <classCode scheme="halTypology" n="ART"></classCode>
+                        </textClass>
+                        <abstract xml:lang="en"></abstract>
+                    </profileDesc>
+                </biblFull>
+            </listBibl>
+        </body>
+    </text>
+</TEI>
