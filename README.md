@@ -47,39 +47,39 @@ Les codes partagés permettent :
 
 - Extraire les publications (format `csv` avec toutes les informations) et placer le fichier dans `data/scopus_biblio/`
 
-- Indiquez le nom de ce fichier dans la variable `scopus_filename`
+- Indiquer le nom de ce fichier dans la variable `scopus_filename`
 
-- Lancez le code avec `step = "verif_data"`
+- Lancer le code avec `step = "verif_data"`
 
-- Modifiez le cas échéant le fichier de scopus (colonne auteur) jusqu'à ce que tous les documents soient traités
+- Modifier le cas échéant le fichier de scopus (colonne auteur) jusqu'à ce que tous les documents soient traités
 
-- Relancez le code avec `step = "verif_auth"`
+- Relancer le code avec `step = "verif_auth"`
 
 <br />
 
 ### 2. Alimenter une base de données locale sur les auteurs de votre établissement
 
-- Lancez le code avec `step = "update_auth_db"` pour alimenter la base de données auteurs. Vérifiez dans la console si il y a des vérifications à faire la main
+- Lancer le code avec `step = "update_auth_db"` pour alimenter la base de données auteurs. Vérifier dans la console si il y a des vérifications à faire à la main
 
 <br />
 
 ### 3. Produire les fichiers TEI
 
-- Lancez le code avec `step = "produce_tei"`
+- Lancer le code avec `step = "produce_tei"`
 
-- Reperez dans la console les publications pour lesquelles un domaine a été ajouté automatiquement, les vérifier et si nécessaire les modifier directement dans la TEI généré. (Quand aucun domaine n'a pu être trouvé c'est celui de la santé qui est ajouté par défaut)
+- Reperer dans la console les publications pour lesquelles un domaine a été ajouté automatiquement, les vérifier et si nécessaire les modifier directement dans la TEI générée. (Quand aucun domaine n'a pu être trouvé c'est celui de la santé qui est ajouté par défaut)
 
 <br />
 
 ### 4. Récupérer les infos d'Unpaywall et verser dans HAL
 
-- Lancez le code avec `step = "tei2preprod"` pour d'abord déposer dans la preprod
+- Lancer le code avec `step = "tei2preprod"` pour d'abord déposer dans la preprod
 
-- Si des erreurs surviennent, retrouvez les dans le fichier `data/erreur_depot_hal.txt` et corrigez les
+- Si des erreurs surviennent, retrouver les dans le fichier `data/erreur_depot_hal.txt` et corriger les
 
 (la plupart des erreurs viennent de la preprod qui ne contient pas les identifiants récents de structures ou journaux)
 
-- Déposer dans HAL : lancez le code avec `step = "tei2hal"`. Retrouvez la liste des documents traités dans `data/doc_imported.csv`
+- Déposer dans HAL : lancer le code avec `step = "tei2hal"`. Retrouver la liste des documents traités dans `data/doc_imported.csv`
 
 <br />
 
@@ -87,7 +87,7 @@ Les codes partagés permettent :
 
 - Pour les documents de type _communications dans un congrès_ modifier dans HAL la ville et le pays (par défaut `unknow` et `France` sont renseignés)
 
-- Complétez autant que souhaité les affiliations des notices HAL.
+- Compléter autant que souhaité les affiliations des notices HAL.
 
 - Enfin, dans le tableau `data/doc_imported.csv`, pour les documents de type _article_ et lorsqu'ils ne sont pas déjà en accès ouvert, vérifier ou modifier les emails extrait automatiquement. Le but étant d'inciter ces auteurs, conformément à la loi pour une république numérique, à partager leur publication dans HAL.
 
@@ -98,9 +98,9 @@ Les codes partagés permettent :
 
 - Ouvrir le code  `2.mailing_auth.py`
 
-- Dans la variable `liste_publi_ac_email` renseigner le tableau contenant les publications à traiter avec les emails des auteurs à contacter
+- Renseigner le nom du tableau contenant les publications à traiter dans la variable `liste_publi_ac_email` 
 
-- Si besoin tester avec `step = "test"`, puis envoyer tous les emails avec `step = "envoi"`
+- Si besoin tester avec `step = "test"` puis envoyer tous les emails avec `step = "envoi"`
 
 
 *** 
@@ -129,7 +129,7 @@ Les codes partagés permettent :
 
 **vigilance**
 
-- Si dépot dans HAL avec fichier en embargo, notre code le marque comme non OA (déduit de unpaywall) et si article un email sera envoyé : trouver une solution (req dans HAL et si file considérer OA ? )
+- Si dépôt dans HAL avec fichier en embargo, notre code le marque comme non OA (déduit de unpaywall) et si article un email sera envoyé : trouver une solution (req dans HAL et si file considérer OA ? )
 
 - Ne pas laisser un laps de temps trop important entre le moment où les données de Unpaywall sont récupérées et celui où les auteurs sont contactés. Par expérience, si on laisse plus d'un mois on risque de contacter des auteurs alors que les articles ont été entre temps déposés dans une archive ouverte.
 
