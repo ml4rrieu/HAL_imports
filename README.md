@@ -13,10 +13,11 @@ Les codes partagés permettent :
 
 ### 0. Configuration
 - Installer python et les librairies listées dans le fichier `requirement.txt`
-- Télécharger le .zip de ce dépot et dézipper
-- Créer un fichier décrivant vos laboratoires à l'instar du fichier `data\stable\labCriteria.csv`
+- Télécharger et dézipper ce dépôt github
+- Créer un fichier décrivant vos laboratoires à l'instar du fichier `data/stable/labCriteria.csv`
+- Personnaliser les modèles de mails présents dans `data/stable/`
 - Créer un fichier csv pour récupérer les données auteurs affiliés à votre établissement, avec les colonnes `key, surname, forename, initial, labname, orcid, mail, scopusId`
-- Créer le fichier `path_and_perso_data.json` dans le dossier  `data\stable\` avec vos informations en respectant le modèle suivant : 
+- Créer le fichier `path_and_perso_data.json` dans le dossier  `data/stable/` avec vos informations en respectant le modèle suivant : 
 
 ```json
 {
@@ -84,17 +85,16 @@ Les codes partagés permettent :
 
 ### 5. Enrichir les métadonnées
 
-- Ajoutez une colonne `mail correspondant` dans le fichier `data/doc_imported.csv`. Compléter cette colonne d'un email d'un auteur pour les publications de type _article_ qui ne sont pas déjà en accès ouvert. Le but étant d'informer ces auteurs qu'ils peuvent, conformément à la loi pour une république numérique, les partager légalement dans HAL. (à l'UVSQ le tableau est chargé dans google drive pour travaille en équipe)
+- Pour les documents de type _communications dans un congrès_ modifier dans HAL la ville et le pays (par défaut `unknow` et `France` sont renseignés)
 
-- Pour les doctype "communications dans un congrès" modifier la ville et le pays (par défaut `unknow` et `France` sont renseignés)
+- Complétez autant que souhaité les affiliations des notices HAL.
 
-- Complétez autant que souhaité les affiliations des notices importées ou déjà présentes
+- Enfin, dans le tableau `data/doc_imported.csv`, pour les documents de type _article_ et lorsqu'ils ne sont pas déjà en accès ouvert, vérifier ou modifier les emails extrait automatiquement. Le but étant d'inciter ces auteurs, conformément à la loi pour une république numérique, à partager leur publication dans HAL.
+
 
 <br />
 
 ### 6. Envoyer les emails
-
-- Personnalisez les modèles d'emails `mailing_auteur/message.txt` et `mailing_auteur/message_pluriel.txt`
 
 - Ouvrir le code  `2.mailing_auth.py`
 
