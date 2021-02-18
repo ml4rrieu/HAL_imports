@@ -220,7 +220,7 @@ def produceTeiTree(doc, auths, dataTei, titles ) :
 	# if journal not in hal and doctype is ART then paste journal title
 	if not dataTei['journalId'] and dataTei['doctype'] == "ART" : 
 		eTitleJ = ET.Element('title', {'level':'j'})
-		eTitleJ.text = dataTei['jtitle']
+		eTitleJ.text =  doc["Source title"]
 		eTitleJ.tail = '\n'+'\t'*8
 		eMonogr.insert(1,eTitleJ)
 		index4meeting+=2

@@ -1,10 +1,10 @@
 """
 voir instructions : https://github.com/ml4rrieu/HAL_imports
 
-colonne du fichier csv en entrée : 
-	index,state,type,lien hal,open access,qui traite,traité ?,commentaire,mail correspondant,mail envoyé
+Colonnes devant être présente dans le csv en entrée
+	doc_type, open_access, emails, ok_?
 
-la colonne 'mail correspondant', pour les articles sans accès ouvert, ne doit pas être lassée vide : indiquer 'pass' si vous ne souhaitez pas envoyer d'email
+la colonne 'emails', pour les articles sans accès ouvert, ne doit pas être lassée vide : indiquer 'pass' si vous ne souhaitez pas envoyer d'email
 """
 
 
@@ -48,10 +48,10 @@ with open("./data/stable/path_and_perso_data.json") as fh :
 
 # ____ load publis liste to be treated
 data = pd.read_csv("./data/"+liste_publi_ac_email)
-sel_publications = data.loc[(data["doc type"] =='ART') &\
-(data['open access'].isin(['closed','open from publisher : no licence'])) &\
-(data['mail correspondant'] !='pass') &\
-(data['qui traite']) ]
+sel_publications = data.loc[(data["doc_type"] =='ART') &\
+(data['open_access'].isin(['closed','open from publisher : no licence'])) &\
+(data['emails'] !='pass') &
+(data['ok_?']) ]
 
 # ____ configure SMTP server
 s = smtplib.SMTP_SSL(host='smtps.uvsq.fr', port=465)
@@ -82,7 +82,7 @@ for mail, uris in mailNuris.items():
 	msg = MIMEMultipart()
 	message = message_template.substitute(TITLE = title_and_link )
 
-	msg['From']="hal.bib@uvsq.fr"
+	msg['From']= local_data["perso_email"]
 	
 	if step == "test" : 
 		msg['To'] = local_data["perso_email"]
@@ -106,4 +106,3 @@ for mail, uris in mailNuris.items():
 
 s.quit()
 fh_stats_envoi.close()
-

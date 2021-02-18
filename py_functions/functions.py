@@ -4,12 +4,9 @@ import xml.etree.ElementTree as ET
 
 
 #def addRow(eid, doi, state, treat_info='', hal_match='', uris=''):
-def addRow(docId, state, treat_info='', hal_match='', uris=''):
+def addRow(docId, state, treat_info='', hal_match='', uris='', emails=''):
 
 	print(f"\tadded to csv\n\t{state}")
-	if docId["doctype"] : 
-		print(f"\t{docId['doctype']}")
-
 	if "not include" not in treat_info and docId['doi'] : 
 		print(f"\t{docId['doi']}") 
 
@@ -21,7 +18,7 @@ def addRow(docId, state, treat_info='', hal_match='', uris=''):
 		print(f"\t{','.join(uris)}")
 
 	writeDoc.writerow([docId['eid'], docId['doi'], docId['doctype'],
-	state, treat_info, hal_match, ','.join(uris)])
+	state, treat_info, hal_match, ','.join(uris), emails ])
 
 
 #______0_____ INIT
@@ -54,7 +51,7 @@ def loadTables_and_createOutpus():
 	docs_table = open('./data/doc_analysed.csv', 'w', newline='', encoding="utf8")
 	global writeDoc
 	writeDoc = csv.writer(docs_table, delimiter =',')
-	writeDoc.writerow(['eid', 'doi', 'doctype', 'state', 'treat_info', 'hal_match', 'halUris'])
+	writeDoc.writerow(['eid', 'doi', 'doctype', 'state', 'treat_info', 'hal_match', 'halUris', 'emails'])
 
 	# txt output for affiliation and deduction made
 	global affil_txt
@@ -205,10 +202,10 @@ def extractRawAffil(auths, rawAffils):
 		print('\n!!!!!!! nb of auths not match nb of affils')
 		quit()
 	
-	#for i in range(0, len(auths)): print(i,"|",
-	# 	auths[i]['surname'],"|",
-	# 	auths[i]['initial'],"|",
-	# 	affils[i])
+	"""for i in range(0, len(auths)): print(i,"|",
+	 	auths[i]['surname'],"|",
+	 	auths[i]['initial'],"|",
+	 	affils[i])"""
 
 	return affils
 
@@ -216,18 +213,19 @@ def extractRawAffil(auths, rawAffils):
 def searchFormeLg(data, fromcsv):
 	"""utilisé dans deduceAffil """	
 	cut = fromcsv.split(',')
+	cut = [elem.strip() for elem in cut]
 	regtotal = len(cut)
 	regcount = 0
 	for i in cut:
-		i = i.strip()
-		if re.search(i, data): regcount +=1
+		if re.search(i, data): 
+			regcount +=1
 	
 	return 1 if regcount == regtotal else 0
 	
 		
 def deduceAffil(eid, labData, auths, affils):
 	"""deduce affiliation with labData"""
-	# algorithme on part de l'affiliation brute et on trouve le labo correspondant
+	# algorithme qui reçoit l'affilition brute et qui donne le sigle du labo correspondant
 	
 	findedAff = {}
 	tutelle = ['uvsq', 'versaill', 'saclay']
@@ -243,7 +241,7 @@ def deduceAffil(eid, labData, auths, affils):
 			if lab in aff : sigle = 1			
 			if labData[lab]['code1'] in aff and labData[lab]['code2'] in aff : code = 1			
 			lablg = searchFormeLg(aff, labData[lab]['regexp'])
-		
+
 
 			#___2. search for tutelle element
 			for tut in tutelle : 
@@ -257,7 +255,7 @@ def deduceAffil(eid, labData, auths, affils):
 
 
 			#__3. if lab element & tutelle element 
-			if sigle + code + lablg > 0 and tutelles > 0 : 
+			if sigle + code + lablg > 0  and tutelles > 0 :  # choix à faire dans la précision : demander en plus la présence d'une tutelle ? 
 				auths[i]['labname'] = lab
 				afffinded = docFromUvsq =  True
 				if not aff in findedAff : 
@@ -273,7 +271,7 @@ def deduceAffil(eid, labData, auths, affils):
 			else :
 				auths[i]["labname"] = False
 
-
+	
 	if not docFromUvsq : return False
 	else : 
 		# export to txt file
@@ -283,10 +281,15 @@ def deduceAffil(eid, labData, auths, affils):
 
 		#add hal structId to authors
 		for item in auths : 
-			if not item['labname']: continue
-			if item['labname'] == 'uvsq' : item['structId'] = 81173
+			if not item['labname'] : 
+				continue
+			
+			if item['labname'] == 'uvsq' :  ##attention personnifier
+				item['structId'] = 81173
+
 			else :
 				item['structId'] = labData[item['labname']]['hal_id']			
+		
 		return auths
 		
 
@@ -298,7 +301,7 @@ def enrichWithValidUvsqAuth(auths):
 		if not item['labname'] : continue # si aut pas uvsq go next
 		key = item['surname']+' '+item['initial'] 
 		if key in validUvsqAuth : 
-			fields = ['forename', 'orcid'] ##on ne prend pas le mail enregistré sur notre base local
+			fields = ['forename', 'mail', 'orcid'] ##on ne prend pas le mail enregistré sur notre base local
 			# if nothing from scopus but present in local db then add value
 			for f in fields : 
 				# if nothing is present then we enrich w uvsq auth db
@@ -326,11 +329,9 @@ def retrieveScopusAuths(auths):
 	""" from scopus get forename and orcid
 	memo : si on pousse un orcid qui est attaché à un idHAL alors l'idHAL s'ajoute automatiquement """
 	
-	
 	for item in auths :
 
-		if item["forename"] and item["orcid"] : 
-			continue
+		if item["forename"] and item["orcid"] : continue
 		
 		req = reqScopus('author?author_id='+ item['scopusId']+'&field=surname,given-name,orcid')
 		try : 
@@ -480,7 +481,7 @@ def reqWithAuthPlusTitle(auths, titles):
 
 #______3_____ Produce TEI HAL
 
-def exportTei(docId, buffHal, docTei) : 
+def exportTei(docId, buffHal, docTei, auths) : 
 	tree = docTei 
 	root = tree.getroot()
 	ET.register_namespace('',"http://www.tei-c.org/ns/1.0")
@@ -492,25 +493,28 @@ def exportTei(docId, buffHal, docTei) :
 	encoding="utf-8", 
 	short_empty_elements=False)
 
+	
+	emails = [elem["mail"] for elem in auths if elem["mail"] ]
+		
+	#memo ['eid', 'doi', 'doctype', 'state', 'treat_info', 'hal_match', 'halUris', 'emails'])
 	if buffHal : 
 		state = "already in hal and TEI generated"
-		addRow(docId, state, '', buffHal['hal_match'], buffHal['uris'] )
+		addRow(docId, state, '', buffHal['hal_match'], buffHal['uris'], ",".join(emails) )
 	else : 
-		addRow(docId, "TEI generated")
+		addRow(docId, "TEI generated", '', '', '', ",".join(emails) )
 	
-def finish(step): 	
-	if step == "verif_auth" : 
-		##produce auth table
-		fnames = ['key', 'surname', 'forename', 'initial', 'labname', 'orcid', 'mail', 'scopusId']
-		with open('./data/temp_uvsq_authors.csv', 'w', newline='', encoding='utf8') as fh :
-			writeAuthor = csv.writer(fh)
-			writeAuthor.writerow(fnames)
-			for auth in temp_uvsqAuth : 
-				orcid = auth['orcid'] if auth['orcid'] else ''
-				mail = auth['mail'] if auth['mail'] else ''
-				row = [auth['surname']+' '+auth['initial'], auth['surname'], auth['forename'], auth['initial'], auth['labname'], orcid, mail, auth['scopusId'] ]
-				writeAuthor.writerow(row)
+def export_temp_auth_db() : 
+	##produce auth table
+	fnames = ['key', 'surname', 'forename', 'initial', 'labname', 'orcid', 'mail', 'scopusId']
+	with open('./data/temp_uvsq_authors.csv', 'w', newline='', encoding='utf8') as fh :
+		writeAuthor = csv.writer(fh)
+		writeAuthor.writerow(fnames)
+		for auth in temp_uvsqAuth : 
+			orcid = auth['orcid'] if auth['orcid'] else ''
+			mail = auth['mail'] if auth['mail'] else ''
+			row = [auth['surname']+' '+auth['initial'], auth['surname'], auth['forename'], auth['initial'], auth['labname'], orcid, mail, auth['scopusId'] ]
+			writeAuthor.writerow(row)
 
+def close_files(): 	
 	docs_table.close()
 	affil_txt.close()
-	quit()

@@ -3,10 +3,9 @@
 Les codes partagés permettent : 
 
 1. de verser automatiquement dans HAL des métadonnées récupérées depuis Scopus
-2. d'effectuer du mailing aux auteurs pour les inciter à partager leur publication en accès ouvert
 
+2. d'envoyer des mails aux auteurs pour les inciter à partager leur publication en accès ouvert si ce n'est pas déjà le cas.
 
-**2021-02 version pré-alpha**
 
 ***
 
@@ -21,7 +20,7 @@ Les codes partagés permettent :
 
 ```json
 {
-	"path_labCriteria":"chemin et nom du fichier décrivant les laboratoires. voir ./hal_depot_auto/source/labCriteria.csv",
+	"path_labCriteria":"chemin et nom du fichier décrivant les laboratoires. voir ./data/stable/labCriteria.csv",
 	"path_validAuthDb": "chemin et nom de la base de données locale en .csv sur les auteurs de votre établissement",
 	"univ_scopusId" : 60029937,
 	"univ_halStructId" : 81173,
@@ -43,11 +42,11 @@ Les codes partagés permettent :
 
 ### 1. Préparer les données
 
-- Depuis scopus extraire une liste de publications (export en `csv` avec toutes les informations)
+- Ouvrir le code `1_produce_tei_and_deposit2hal.py`, à partir de l'exemple en commentaire déduire une requête scopus
 
-- Placez ce fichier dans le dossier `data/scopus_biblio/`
+- Extraire les publications (format `csv` avec toutes les informations) et placer le fichier dans `data/scopus_biblio/`
 
-- Ouvrir le code `1_produce_tei_and_deposit2hal.py` et renseigner le nom du fichier dans la variable  `scopus_filename`
+- Indiquez le nom de ce fichier dans la variable `scopus_filename`
 
 - Lancez le code avec `step = "verif_data"`
 
@@ -67,7 +66,7 @@ Les codes partagés permettent :
 
 - Lancez le code avec `step = "produce_tei"`
 
-- Reperez dans la console les publications pour lesquelles un domaine a été ajouté automatiquement, les vérifier et si nécessaure les modifier directement dans la TEI généré. (Quand aucun domaine n'a pu être déduit c'est celui de la santé qui est ajouté par défaut)
+- Reperez dans la console les publications pour lesquelles un domaine a été ajouté automatiquement, les vérifier et si nécessaire les modifier directement dans la TEI généré. (Quand aucun domaine n'a pu être trouvé c'est celui de la santé qui est ajouté par défaut)
 
 <br />
 
@@ -75,11 +74,11 @@ Les codes partagés permettent :
 
 - Lancez le code avec `step = "tei2preprod"` pour d'abord déposer dans la preprod
 
-- Le cas échéant corriger les erreurs survenues lors des dépôts. Voir le fichier  `data/erreur_depot_hal.txt`
+- Si des erreurs surviennent, retrouvez les dans le fichier `data/erreur_depot_hal.txt` et corrigez les
 
 (la plupart des erreurs viennent de la preprod qui ne contient pas les identifiants récents de structures ou journaux)
 
-- Lancez le code avec `step = "tei2hal"` pour cette fois alimenter HAL. Retrouvez la liste des documents traités dans `data/doc_imported.csv`
+- Déposer dans HAL : lancez le code avec `step = "tei2hal"`. Retrouvez la liste des documents traités dans `data/doc_imported.csv`
 
 <br />
 
@@ -108,8 +107,7 @@ Les codes partagés permettent :
 
 **todo**
 
-dans le tableau de sortie  `doc_imported.csv` pre remplir l'email avec auteur de l'université ou auteur correspondant
-
+~~dans le tableau de sortie `doc_imported.csv` pre remplir avec les emails trouvés~~
 
 ~~regorganiser l'arborescence et code pour plus de fluidité~~
 

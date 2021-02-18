@@ -1,6 +1,6 @@
 """
 memo extraction scopus
-	AF-ID ( 60029937 )  PUBDATETXT(July 2004) or loaddate(2 0200701) or  AND  RECENT ( 8 ) 
+	AF-ID ( 60029937 )  PUBDATETXT(July 2004) or LOAD-DATE(20200701) or  RECENT ( 8 ) 
 
 instructions
 	https://github.com/ml4rrieu/HAL_imports
@@ -11,13 +11,13 @@ instructions
 #____________________________________________________________
 # Nom de l'étape à lancer
 # verif_data, verif_auth, update_auth_db, produce_tei, tei2preprod, tei2hal
-step = "verif_data"  
+step = "tei2preprod"  
 
 # Nom du fichier extrait de scopus (a placer dans ./data/scopus_biblio/)
-scopus_filename = "test.csv" #2020-12-scopus.csv
+scopus_filename = "test_scopus_shs.csv" #2020-12-scopus.csv
 
 
-rowRange=[0,10000] # pour debug uniquement : intervalle de lignes à traiter
+rowRange=[0, 0] # pour debug uniquement : intervalle de lignes à traiter
 #____________________________________________________________
 
 
@@ -40,7 +40,7 @@ if step == "verif_data" :
 
 
 
-if step == "verif_auth" or step == "produce_tei": 
+if step == "verif_auth" or step == "produce_tei" : 
 	
 	loadTables_and_createOutpus()
 	labData = loadLabData_and_afid2structId()
@@ -54,7 +54,7 @@ if step == "verif_auth" or step == "produce_tei":
 		print(f"\n{i}\n{docId['eid']}")
 
 		# _____1_____
-		# if doctype not include : continue
+		# filter on doctype
 		docId['doctype'] = matchDocType(doc['Document Type'])
 		if not docId['doctype'] :
 			if step == 'verifAuth' : print(f"\ndoctype not include : {doc['Document Type']}")
@@ -66,7 +66,8 @@ if step == "verif_auth" or step == "produce_tei":
 		if alreadyTreated : 
 			print(f"\talready in HAL and treated by you")
 			continue
-			
+		
+
 		#_____2_____ Extract & enrich authors data
 
 		# from scopus table extract name, initial, authId
@@ -83,7 +84,7 @@ if step == "verif_auth" or step == "produce_tei":
 		
 		#if not auth is affiliated to your research units continue
 		if not auths :
-			addRow(docId, 'not treated', 'lab not founded')
+			addRow(docId, 'not treated', 'lab or univ not founded')
 			continue
 		
 		# from uvsqAuthors enrich authors data
@@ -94,6 +95,8 @@ if step == "verif_auth" or step == "produce_tei":
 
 		# for non uvsq auths, retrieve scopus search api (afid)
 		auths = retrieveScopusAfid(docId['eid'], auths)
+
+		#print(json.dumps(auths, indent = 3))
 		
 		if step == 'verif_auth' : 
 			populateTempAuthDb(auths)
@@ -118,16 +121,16 @@ if step == "verif_auth" or step == "produce_tei":
 			#_____2d_____ Produce TEI
 			dataTei = produceTei.prepareData(doc, labData, auths, docId['doctype'])
 			docTei = produceTei.produceTeiTree(doc, auths, dataTei, titles)
-			exportTei(docId, buffHal, docTei)
+			exportTei(docId, buffHal, docTei, auths)
 
-	finish(step)
-	
-	if step == 'verif_aut' : 
+	if step == 'verif_auth' : 
+		export_temp_auth_db()
 		print("\n\n>>>> les donnes auteurs ont ete recuperees : passez a l etape update_auth_db")
+
 	if step == 'produce_tei' : 
 		print("\n\n>>>> fichiers TEI produits : passez a l etape tei_to_hal")
-	quit()
 
+	close_files()
 
 
 if step == "update_auth_db" : 
@@ -240,7 +243,7 @@ if step == "tei2preprod" or step == "tei2hal" :
 	def reqUnpaywall(doi):
 		"""search of repository  in oa_location, if not search for publisher"""
 		url = 'https://api.unpaywall.org/v2/'
-		req = requests.get(url+doi+'?email=youremail@inserm.fr')
+		req = requests.get(url+doi+'?email=youremail@inserm.fr') ##todo change to local_data["perso_email"]
 		
 		#print(url+doi+'?email=m@larri.eu')
 		try : 
@@ -264,7 +267,7 @@ if step == "tei2preprod" or step == "tei2hal" :
 	# output table to list all publications that have been treated
 	doc_imported = open('./data/doc_imported.csv', 'w', newline='', encoding='utf8')
 	writer = csv.writer(doc_imported)
-	writer.writerow(['state', 'doc type', 'lien hal', 'open access'])
+	writer.writerow(['state', 'doc_type', 'lien_hal', 'open_access', "qui_traite", "ok_?", "pdf_dans_hal", "emails"])
 
 	out_error = open('./data/erreur_depot_hal.txt', 'w', encoding='utf-8') # fichier txt pour capturer les erreurs sword
 
@@ -280,6 +283,8 @@ if step == "tei2preprod" or step == "tei2hal" :
 		if row['state'].startswith('already in') :
 			addRow.insert(0, 'old')
 			addRow.insert(2,row['halUris'])
+			if oatype == "closed" : 
+				addRow += ['', '', '', row["emails"]]
 			writer.writerow(addRow)
 			print("\told")
 			continue
@@ -315,10 +320,12 @@ if step == "tei2preprod" or step == "tei2hal" :
 			else  : out_error.write(causeElem.text)
 			continue
 				
-		## if depot is valid get hal uri_s to populate csv
+		## if depot is valid get hal uri_s and populate csv
 		addRow.insert(0,'new')
 		addRow.insert(2, linkelem.attrib['href'] )
 		print("\tnew")
+		if oatype == "closed" : 
+			addRow += ['', '', '', row["emails"]]
 		writer.writerow(addRow)
 		xmlfh.close()
 

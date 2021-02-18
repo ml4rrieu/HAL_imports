@@ -1,2 +1,2 @@
-eid,doi,doctype,state,treat_info,hal_match,halUris
-2-s2.0-85097753324,10.1016/j.jflm.2020.102104,ART,TEI generated,,,
+eid,doi,doctype,state,treat_info,hal_match,halUris,emails
+2-s2.0-85098645151,,ART,already in hal and TEI generated,,titles match,https://hal.archives-ouvertes.fr/hal-03144768,machado@oal.ul.pt
