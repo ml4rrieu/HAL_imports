@@ -128,26 +128,3 @@ Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.arch
 
 - Ne pas laisser un laps de temps trop important entre le moment où les données de Unpaywall sont récupérées et celui où les auteurs sont contactés. Par expérience, si on laisse plus d'un mois on risque de contacter des auteurs alors que les articles ont été entre temps déposés dans une archive ouverte.
 
-<br />
-
-**To Do**
-
-~~dans le tableau de sortie `doc_imported.csv` pre remplir avec les emails trouvés~~
-
-~~suppression des erreurs d'imports avec les types OUV COUV et COMM~~
-
-~~amelioration detection langue du 2nd titre~~
-
-~~ajour d'un fichier de correspondance iso-639-3 pour la langue des publications~~ 
-
-~~prise en compte des data paper et article in press~~
-
-~~extraire le mail de l'auteur correspondant~~
-
-
-
-
-
-
-
-
