@@ -4,7 +4,7 @@ Les codes partagés permettent :
 
 * de verser automatiquement dans HAL des métadonnées récupérées depuis Scopus
 
-* d'envoyer des mails aux auteurs pour les inciter à déposer leur publication en texte intégral dans HAL
+* d'envoyer des mails aux auteurs pour les incite	r à déposer leur publication en texte intégral dans HAL
 
 <br />
 
@@ -19,7 +19,7 @@ Les codes partagés permettent :
 
 100 pdf déposées par le SCD ou les auteurs
 
-Voir les imports effectués :[HAL contributorId_i/751146](https://hal.archives-ouvertes.fr/search/index/q/*/contributorId_i/751146)
+Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.archives-ouvertes.fr/search/index/q/*/contributorId_i/751146)
 
 <br />
 
