@@ -4,7 +4,7 @@ Les codes partagés permettent :
 
 * de verser automatiquement dans HAL des métadonnées récupérées depuis Scopus
 
-* d'envoyer des mails aux auteurs pour les incite	r à déposer leur publication en texte intégral dans HAL
+* d'envoyer des mails aux auteurs pour les inciter à déposer leur article en texte intégral, conformément à la loi pour une république numérique
 
 <br />
 
