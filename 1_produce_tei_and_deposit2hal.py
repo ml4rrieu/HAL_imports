@@ -1,6 +1,6 @@
 """
 memo extraction scopus
-	AF-ID ( 60029937 )  PUBDATETXT(July 2004) or LOAD-DATE(20200701) or  RECENT ( 8 ) 
+	AF-ID ( 60029937 ) OR PUBDATETXT(July 2004) or LOAD-DATE > 20200701 OR  RECENT ( 8 ) 
 
 instructions
 	https://github.com/ml4rrieu/HAL_imports
@@ -11,13 +11,13 @@ instructions
 #____________________________________________________________
 # Nom de l'étape à lancer
 # verif_data, verif_auth, update_auth_db, produce_tei, tei2preprod, tei2hal
-step = "tei2preprod"  
+step = "produce_tei"  
 
 # Nom du fichier extrait de scopus (a placer dans ./data/scopus_biblio/)
-scopus_filename = "test_scopus_shs.csv" #2020-12-scopus.csv
+scopus_filename = "test.csv" #2020-12-scopus.csv
 
 
-rowRange=[0, 0] # pour debug uniquement : intervalle de lignes à traiter
+rowRange=[0, 10000] # pour debug uniquement : intervalle de lignes à traiter
 #____________________________________________________________
 
 
@@ -108,7 +108,7 @@ if step == "verif_auth" or step == "produce_tei" :
 	
 			idInHal = reqWithIds(doc['DOI'], doc['PubMed ID'])
 			if idInHal[0] > 0 :  
-				addRow(docId, 'already in hal','', 'ids match',idInHal[1] )
+				addRow(docId, 'already in hal', '', 'ids match', idInHal[1] )
 				i+=1
 				continue	
 

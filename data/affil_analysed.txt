@@ -1,6 +1,150 @@
 
 
-2-s2.0-85098645151
-lesia, observatoire de paris, université psl, cnrs, sorbonne université, université de paris, 5 place jules janssen, meudon, 92195, france, dynamiques patrimoniales et culturelles (dypac), université paris-saclay, versailles, 78000, france; 
-dypac
+2-s2.0-85098139875
+université paris-saclay, université de versailles saint-quentin-en-yvelines, university paris-sud, institut national de la santé et de la recherche médicale unité 1018, team exposome, heredity, cancer and health, center for research in epidemiology and population health, villejuif, france; 
+cesp
+
+taipei city psychiatric center, taipei city hospital, taipei city, taiwan, department of health care management, national taipei university of nursing and health sciences, 89, nei-chiang street, wan-hua district, taipei, 10845, taiwan, université paris-saclay, université de versailles saint-quentin-en-yvelines, university paris-sud, institut national de la santé et de la recherche médicale unité 1018, team exposome, heredity, cancer and health, center for research in epidemiology and population health, villejuif, france
+cesp
+
+
+
+2-s2.0-85102185889
+latmos/ipsl, sorbonne université, uvsq, cnrs, paris, france; 
+latmos
+
+
+
+2-s2.0-85100518256
+
+
+2-s2.0-85100430702
+université paris-saclay, uvsq, cnrs, gemac, versailles, 78000, france; 
+gemac
+
+université paris-saclay, uvsq, cnrs, gemac, versailles, 78000, france, departamento de ciencias, sección física, pontificia universidad católica del perú, apartado, lima, 1761, peru; 
+gemac
+
+université paris-saclay, uvsq, cnrs, latmos, guyancourt, 78280, france; 
+latmos
+
+université paris-saclay, uvsq, cnrs, gemac, versailles, 78000, france
+gemac
+
+
+
+2-s2.0-85098270892
+centre for research in epidemiology and population health, french national institute of health and medical research (inserm u1018), université paris saclay, université paris-sud, uvsq, villejuif, france, institute for research and information in health economics (irdes), paris, france; 
+cesp
+
+centre for research in epidemiology and population health, french national institute of health and medical research (inserm u1018), université paris saclay, université paris-sud, uvsq, villejuif, france, institute for research and information in health economics (irdes), paris, france
+cesp
+
+
+
+2-s2.0-85097904317
+university of paris-saclay, uvsq, inserm u1179, end-icap, montigny-le-bretonneux, france, raymond poincaré hospital, aphp, garches, france; 
+endicap
+
+university of paris-saclay, uvsq, inserm u1179, end-icap, montigny-le-bretonneux, france; 
+endicap
+
+university of paris-saclay, uvsq, inserm u1179, end-icap, montigny-le-bretonneux, france, aphp, gh université paris saclay, dmu smart imaging, raymond poincaré teaching hospital, garches, france; 
+endicap
+
+university of paris-saclay, uvsq, inserm u1173, 2i, montigny-le-bretonneux, france
+2i
+
+
+
+2-s2.0-85097482002
+
+
+2-s2.0-85102003768
+ea 4340 beccoh, uvsq, université paris-saclay, boulogne-billancourt, 92100, france; 
+beccoh
+
+ea 4340 beccoh, uvsq, université paris-saclay, boulogne-billancourt, 92100, france, department of respiratory diseases and thoracic oncology, aphp—hopital ambroise pare, boulogne-billancourt, 92100, france; 
+beccoh
+
+ea 4340 beccoh, uvsq, université paris-saclay, boulogne-billancourt, 92100, france, department of pathology, aphp—hopital ambroise pare, boulogne-billancourt, 92100, france; 
+beccoh
+
+ea 4340 beccoh, uvsq, université paris-saclay, boulogne-billancourt, 92100, france, department of respiratory diseases and thoracic oncology, aphp—hopital ambroise pare, boulogne-billancourt, 92100, france
+beccoh
+
+
+
+2-s2.0-85096626349
+university of paris-saclay, inrae, uvsq, vim, jouy-en-josas, 78350, france; 
+vim
+
+
+
+2-s2.0-85098939328
+midwifery department, ea 7285, versailles saint quentin university, montigny-le-bretonneux, f-78180, france, department of obstetrics and gynecology, poissy-saint germain hospital, poissy, f-78300, france; 
+riscq
+
+université paris-saclay, uvsq, univ. paris-sud, inserm, équipe soins primaires et prévention, cesp, villejuif, 94807, france, uvsq, faculty of health sciences simone veil, department of family medicine, montigny le bretonneux, france; 
+cesp
+
+université paris-saclay, uvsq, univ. paris-sud, inserm, équipe soins primaires et prévention, cesp, villejuif, 94807, france, ap-hp, ghu paris saclay, hôpital raymond poincaré, département hospitalier d'epidémiologie et de santé publique, garches, france; 
+cesp
+
+midwifery department, ea 7285, versailles saint quentin university, montigny-le-bretonneux, f-78180, france, department of obstetrics and gynecology, poissy-saint germain hospital, poissy, f-78300, france
+riscq
+
+
+
+2-s2.0-85094969427
+
+
+2-s2.0-85083643866
+addictions department, chu caremeau, nîmes, france, paris-saclay university, univ. paris-sud, uvsq, cesp, inserm, villejuif, france; 
+cesp
+
+addictions department, chu caremeau, nîmes, france, inserm u1018, hôpital paul brousse, villejuif, france
+cesp
+
+
+
+2-s2.0-85099364789
+
+
+2-s2.0-85097314495
+intensive care unit, assistance publique-hôpitaux de paris, university hospital ambroise paré, boulogne-billancourt, france, inserm u-1018, cesp, team 5, university of versailles saint-quentin en yvelines, villejuif, france, faculty of medicine paris ile-de-france ouest, university of versailles saint-quentin en yvelines, villejuif, france; 
+cesp
+
+
+
+2-s2.0-85098992125
+
+
+2-s2.0-85097544625
+
+
+2-s2.0-85095942844
+laboratoire des sciences du climat et de l’environnement (lsce/ipsl), cea-cnrs-uvsq, université paris-saclay, gif-sur-yvette, 91198, france; 
+lsce
+
+laboratoire des sciences du climat et de l’environnement (lsce/ipsl), cea-cnrs-uvsq, université paris-saclay, gif-sur-yvette, 91198, france, school of earth and environmental sciences, university of st andrews, st andrews, ky16 9al, united kingdom; 
+lsce
+
+
+
+2-s2.0-85096712169
+laboratoire des sciences du climat et de l’environnement, lsce/ipsl, cea-cnrs-uvsq, université paris-saclay, gif-sur-yvette, f-91191, france; 
+lsce
+
+
+
+2-s2.0-85101898653
+latmos/ipsl, uvsq, sorbonne université, cnrs, guyancourt, 78280, france; 
+latmos
+
+
+
+2-s2.0-85102153523
+inserm u-987, centre d'evaluation et de traitement de la douleur, chu ambroise paré, université versailles-saint-quentin, boulogne-billancourt, versailles, france; 
+lppd
 

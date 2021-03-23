@@ -2,10 +2,26 @@
 
 Les codes partagés permettent : 
 
-1. de verser automatiquement dans HAL des métadonnées récupérées depuis Scopus
+* de verser automatiquement dans HAL des métadonnées récupérées depuis Scopus
 
-2. d'envoyer des mails aux auteurs pour les inciter à partager leur publication en accès ouvert si ce n'est pas déjà le cas.
+* d'envoyer des mails aux auteurs pour les inciter à déposer leur publication en texte intégral dans HAL
 
+<br />
+
+***
+## Statistiques fev. 2021 UVSQ
+
+600 publications importées
+
+300 notices vérifiées déjà présentes dans HAL
+
+370 emails envoyés
+
+100 pdf déposées par le SCD ou les auteurs
+
+Voir les imports effectués :[HAL contributorId_i/751146](https://hal.archives-ouvertes.fr/search/index/q/*/contributorId_i/751146)
+
+<br />
 
 ***
 
@@ -31,6 +47,7 @@ Les codes partagés permettent :
 	"perso_login_hal" : "login compte hal",
 	"perso_mdp_hal" : "mdp compte HAL",
 	"perso_email": "your.email@univ.fr",
+	"alias_email" : "hal.bib@uvsq.fr",
 	"perso_scopusApikey" : false,
 	"perso_scopusInstToken": false,
 	"perso_login_server": "login pour se connecter au serveur",
@@ -105,11 +122,17 @@ Les codes partagés permettent :
 
 *** 
 
-**todo**
+<br />
+
+**Vigilance**
+
+- Ne pas laisser un laps de temps trop important entre le moment où les données de Unpaywall sont récupérées et celui où les auteurs sont contactés. Par expérience, si on laisse plus d'un mois on risque de contacter des auteurs alors que les articles ont été entre temps déposés dans une archive ouverte.
+
+<br />
+
+**To Do**
 
 ~~dans le tableau de sortie `doc_imported.csv` pre remplir avec les emails trouvés~~
-
-~~regorganiser l'arborescence et code pour plus de fluidité~~
 
 ~~suppression des erreurs d'imports avec les types OUV COUV et COMM~~
 
@@ -117,39 +140,13 @@ Les codes partagés permettent :
 
 ~~ajour d'un fichier de correspondance iso-639-3 pour la langue des publications~~ 
 
-~~resolution du probleme de domaine (déduction du domaine à partir du journal si au moins 10 occurences)~~
-
-~~allégement : path_scopusStruct2halStruct déjà dans labCriteria.csv~~
-
 ~~prise en compte des data paper et article in press~~
 
 ~~extraire le mail de l'auteur correspondant~~
 
-<br />
 
-**vigilance**
 
-- Si dépôt dans HAL avec fichier en embargo, notre code le marque comme non OA (déduit de unpaywall) et si article un email sera envoyé : trouver une solution (req dans HAL et si file considérer OA ? )
 
-- Ne pas laisser un laps de temps trop important entre le moment où les données de Unpaywall sont récupérées et celui où les auteurs sont contactés. Par expérience, si on laisse plus d'un mois on risque de contacter des auteurs alors que les articles ont été entre temps déposés dans une archive ouverte.
-
-<br />
-<br />
-
-## Statistiques
-
-fev. 2021
-
-600 notices importées
-
-311 emails envoyés
-
-200 notices vérifiées déjà présentes dans HAL
-
-100 pdf déposées par le SCD ou par les auteurs
-
-<br />
-voir les imports effectués : https://hal.archives-ouvertes.fr/search/index/q/*/contributorId_i/751146
 
 
 

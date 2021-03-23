@@ -18,7 +18,7 @@ def addRow(docId, state, treat_info='', hal_match='', uris='', emails=''):
 		print(f"\t{','.join(uris)}")
 
 	writeDoc.writerow([docId['eid'], docId['doi'], docId['doctype'],
-	state, treat_info, hal_match, ','.join(uris), emails ])
+	state, treat_info, hal_match, ', '.join(uris), emails ])
 
 
 #______0_____ INIT
@@ -168,12 +168,17 @@ def extractAuthors(authors, authId):
 
 
 def extractCorrespEmail(auths, corresp):
-	for i in range(len(auths)) : 
-		if corresp.startswith(auths[i]['surname']) and 'email' in corresp :
-			mail = corresp[corresp.find('mail') + len('mail: '):].strip()
-			auths[i]['mail'] = mail
-			auths[i]['corresp'] = True
-			break
+	
+
+	for item in auths : 
+		for addr in corresp.split('\n')  : # Address Corresp can contains many lines, many emails
+			if addr.startswith(item["surname"]) : 
+				mail = [elem for elem in addr.split(" ") if "@" in elem]
+				if mail : 
+					item['mail'] = mail[0]
+					item['corresp'] = True
+					break
+						
 	return auths
 
 
@@ -499,9 +504,9 @@ def exportTei(docId, buffHal, docTei, auths) :
 	#memo ['eid', 'doi', 'doctype', 'state', 'treat_info', 'hal_match', 'halUris', 'emails'])
 	if buffHal : 
 		state = "already in hal and TEI generated"
-		addRow(docId, state, '', buffHal['hal_match'], buffHal['uris'], ",".join(emails) )
+		addRow(docId, state, '', buffHal['hal_match'], buffHal['uris'], ", ".join(emails) )
 	else : 
-		addRow(docId, "TEI generated", '', '', '', ",".join(emails) )
+		addRow(docId, "TEI generated", '', '', '', ", ".join(emails) )
 	
 def export_temp_auth_db() : 
 	##produce auth table

@@ -3,4 +3,6 @@ data/stable/path_and_perso_data.json
 data/stats_envoi.csv
 data/temp_uvsq_authors.csv
 note_perso.txt
-data/affil_analysed.txt
+data/doc_analysed.csv
+data/doc_imported.csv
+data/stats_envoi_emails.csv

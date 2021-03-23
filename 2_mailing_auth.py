@@ -46,6 +46,7 @@ def reqHal(halId):
 with open("./data/stable/path_and_perso_data.json") as fh : 
 	local_data = json.load(fh)
 
+
 # ____ load publis liste to be treated
 data = pd.read_csv("./data/"+liste_publi_ac_email)
 sel_publications = data.loc[(data["doc_type"] =='ART') &\
@@ -53,26 +54,26 @@ sel_publications = data.loc[(data["doc_type"] =='ART') &\
 (data['emails'] !='pass') &
 (data['ok_?']) ]
 
+
 # ____ configure SMTP server
 s = smtplib.SMTP_SSL(host='smtps.uvsq.fr', port=465)
 s.login(local_data["perso_login_server"], local_data["perso_pwd_server"])
+
+# ____ construct dict {email : [uris]}
+# un doctionnaire avec les emails en clé et une liste de url en valeure
+mailNuris = defaultdict(list)
+{r['emails'] : mailNuris[r['emails']].append(r['lien_hal']) for i,r in sel_publications.iterrows()}
+print(f"nb mail à envoyer : {len(mailNuris)}")
 
 #______ un csv pour s'assurer que les emails ont bien été envoyés
 fh_stats_envoi = open("./data/stats_envoi_emails.csv", 'w', encoding='utf8', newline='')
 out = csv.writer(fh_stats_envoi)
 
-# ____ construct dict {email : [uris]}
-# email comme clé de dictionnaire
-mailNuris = defaultdict(list)
-{r['mail correspondant']:mailNuris[r['mail correspondant']].append(r['lien hal']) for i,r in sel_publications.iterrows()}
-print(f"nb auteur a contacter : {len(mailNuris)}")
-#print(json.dumps(mailNuris))
 
 for mail, uris in mailNuris.items():
-	#if len(uris) == 1 : continue
 
 	title = ['- '+reqHal(link[link.find('/',8)+1:]) for link in uris]
-	title_and_link = [j for i in zip(title, uris) for j in i]
+	title_and_link = [j for i in zip(title, uris) for j in i] # une liste pour lier uri et titre
 	title_and_link = "\n".join(title_and_link)
 		
 	# ____ load message template
@@ -83,15 +84,19 @@ for mail, uris in mailNuris.items():
 	message = message_template.substitute(TITLE = title_and_link )
 
 	msg['From']= local_data["perso_email"]
-	
+
+	#extract indivudual emails
+	destinataires = [elem.strip() for elem in mail.split(",")]
+		
 	if step == "test" : 
 		msg['To'] = local_data["perso_email"]
 	
 	elif step == "envoi" : 
-		msg['To'] = mail
-		msg['Cc'] = "hal.bib@uvsq.fr"
+		msg['To'] = ", ".join(destinataires)
+		if local_data.get("alias_email") : 
+			msg['Cc'] = local_data["alias_email"]
 	
-	msg['Subject'] = "Partager votre article sur HAL "+title[0]	
+	msg['Subject'] = "Partager votre article sur HAL " + title[0]	
 
 	# ____ add body to msg
 	msg.attach(MIMEText(message, 'plain'))
@@ -103,6 +108,7 @@ for mail, uris in mailNuris.items():
 	
 	if step == "test" : 
 		break
+
 
 s.quit()
 fh_stats_envoi.close()
