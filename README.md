@@ -119,12 +119,5 @@ Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.arch
 
 - Si besoin tester avec `step = "test"` puis envoyer tous les emails avec `step = "envoi"`
 
-
-*** 
-
 <br />
-
-**Vigilance**
-
-- Ne pas laisser un laps de temps trop important entre le moment où les données de Unpaywall sont récupérées et celui où les auteurs sont contactés. Par expérience, si on laisse plus d'un mois on risque de contacter des auteurs alors que les articles ont été entre temps déposés dans une archive ouverte.
-
+(Ne pas laisser un laps de temps trop important entre le moment où les données de Unpaywall sont récupérées et celui où les auteurs sont contactés. Par expérience, si on laisse plus d'un mois on risque de contacter des auteurs alors que les articles ont été entre temps déposés dans une archive ouverte.)
