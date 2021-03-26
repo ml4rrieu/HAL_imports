@@ -1,25 +1,31 @@
-# Imports automatiques dans HAL et mailing aux auteurs 
+# Imports HAL et incitation à l'accès ouvert
 
-Les codes partagés permettent : 
 
-* de verser automatiquement dans HAL des métadonnées récupérées depuis Scopus
+Après avoir publié un article sientifique les auteurs reçoivent souvent des mails les invitant à payer pour publier dans des revues prédatrices. Et si nous utilisions le même procédé mais pour une fin plus éthique : inviter les auteurs à partager en **accès ouvert** leur article, dans HAL, comme l'autorise la loi [Pour une république numérique](https://www.ouvrirlascience.fr/guide-application-loi-republique-numerique-article-30-ecrits-scientifiques-version-courte/) ?
 
-* d'envoyer des mails aux auteurs pour les inciter à déposer leur article en texte intégral, conformément à la loi pour une république numérique
+
+Le code partagé permet ainsi : 
+
+* de verser automatiquement dans HAL les métadonnées Scopus des publications
+
+* d'envoyer des mails aux auteurs les incitant à déposer leur article en accès ouvert(voir [modèle de mail](./data/stable/message.txt))
 
 <br />
 
 ***
-## Statistiques fev. 2021 UVSQ
+## Statistiques
 
-600 publications importées
+A l'UVSQ après 10 mois  : 
 
-300 notices vérifiées déjà présentes dans HAL
+* 600 publications importées
 
-370 emails envoyés
+* 300 notices vérifiées déjà présentes dans HAL
 
-100 pdf déposées par le SCD ou les auteurs
+* 370 emails envoyés
 
-Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.archives-ouvertes.fr/search/index/q/*/contributorId_i/751146)
+* 100 pdf déposées par le SCD ou les auteurs
+
+Voir les imports effectués : [contributorId_i/751146](https://hal.archives-ouvertes.fr/search/index/q/*/contributorId_i/751146)
 
 <br />
 
@@ -84,7 +90,7 @@ Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.arch
 
 - Lancer le code avec `step = "produce_tei"`
 
-- Reperer dans la console les publications pour lesquelles un domaine a été ajouté automatiquement, les vérifier et si nécessaire les modifier directement dans la TEI générée. (Quand aucun domaine n'a pu être trouvé c'est celui de la santé qui est ajouté par défaut)
+- Reperer dans la console les publications pour lesquelles un domaine a été ajouté automatiquement, les vérifier et si nécessaire les modifier directement dans la TEI générée. (le domaine de la santé est ajouté par défaut)
 
 <br />
 
@@ -92,9 +98,7 @@ Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.arch
 
 - Lancer le code avec `step = "tei2preprod"` pour d'abord déposer dans la preprod
 
-- Si des erreurs surviennent, retrouver les dans le fichier `data/erreur_depot_hal.txt` et corriger les
-
-(la plupart des erreurs viennent de la preprod qui ne contient pas les identifiants récents de structures ou journaux)
+- Si des erreurs surviennent, retrouver les dans le fichier `data/erreur_depot_hal.txt` et corriger les. (la plupart des erreurs viennent de la preprod qui ne contient pas les identifiants récents de structures ou journaux)
 
 - Déposer dans HAL : lancer le code avec `step = "tei2hal"`. Retrouver la liste des documents traités dans `data/doc_imported.csv`
 
@@ -106,7 +110,7 @@ Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.arch
 
 - Compléter autant que souhaité les affiliations des notices HAL.
 
-- Enfin, dans le tableau `data/doc_imported.csv`, pour les documents de type _article_ et lorsqu'ils ne sont pas déjà en accès ouvert, vérifier ou modifier les emails extrait automatiquement. Le but étant d'inciter ces auteurs, conformément à la loi pour une république numérique, à partager leur publication dans HAL.
+- Dans le tableau `data/doc_imported.csv`, ajouter/vérifier les emails extraits automatiquement. Le but étant d'inciter ces auteurs à ajouter le fichier PDF de leur publication dans HAL.
 
 
 <br />
@@ -117,7 +121,7 @@ Voir les imports effectués dans HAL : [contributorId_i/751146](https://hal.arch
 
 - Renseigner le nom du tableau contenant les publications à traiter dans la variable `liste_publi_ac_email` 
 
-- Si besoin tester avec `step = "test"` puis envoyer tous les emails avec `step = "envoi"`
+- Tester si besoin avec `step = "test"` puis envoyer tous les emails avec `step = "envoi"`
 
 <br />
 (Ne pas laisser un laps de temps trop important entre le moment où les données de Unpaywall sont récupérées et celui où les auteurs sont contactés. Par expérience, si on laisse plus d'un mois on risque de contacter des auteurs alors que les articles ont été entre temps déposés dans une archive ouverte.)
