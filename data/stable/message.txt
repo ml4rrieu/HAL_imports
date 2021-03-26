@@ -6,7 +6,7 @@ ${TITLE}
 
 Cet article peut être diffusé en accès ouvert sur l'archive ouverte HAL : la loi "Pour une république numérique" vous autorise en effet à partager 6 mois après publication [1] le manuscrit auteur accepté pour publication, c'est-à-dire la version qui précède la mise en forme éditeur [2].
 
-Nous vous invitons à ajouter le fichier PDF correspondant dans HAL. Pour cela veuillez nous communiquer l'email de votre compte HAL, vous aurez alors la propriété de la notice et pourrez ajouter le fichier PDF -- si vous préférez vous pouvez nous transmettre directement le PDF et nous l'ajouterons.
+Nous vous invitons à ajouter le fichier PDF correspondant dans HAL. Pour cela veuillez nous communiquer l'email de votre compte HAL, afin que l'on vous accorde les droits nécessaires, ou bien si vous préférez transmettez-nous directement le PDF et nous l'ajouterons.
 
 
 Je reste à votre disposition pour toutes questions.

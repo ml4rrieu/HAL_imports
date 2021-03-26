@@ -4,11 +4,11 @@
 Après avoir publié un article sientifique les auteurs reçoivent souvent des mails les invitant à payer pour publier dans des revues prédatrices. Et si nous utilisions le même procédé mais pour une fin plus éthique : inviter les auteurs à partager en **accès ouvert** leur article, dans HAL, comme l'autorise la loi [Pour une république numérique](https://www.ouvrirlascience.fr/guide-application-loi-republique-numerique-article-30-ecrits-scientifiques-version-courte/) ?
 
 
-Le code partagé permet ainsi : 
+Le code partagé permet : 
 
 * de verser automatiquement dans HAL les métadonnées Scopus des publications
 
-* d'envoyer des mails aux auteurs les incitant à déposer leur article en accès ouvert(voir [modèle de mail](./data/stable/message.txt))
+* d'envoyer aux auteurs des mails les incitant à déposer leur article en accès ouvert (voir [modèle de mail](./data/stable/message.txt))
 
 <br />
 
@@ -34,17 +34,17 @@ Voir les imports effectués : [contributorId_i/751146](https://hal.archives-ouve
 ## Reproduire le code pour son établissement
 
 ### 0. Configuration
-- Installer python et les librairies listées dans le fichier `requirement.txt`
+- Installer python et les librairies listées dans le fichier [requirement.txt](./requirement.txt)
 - Télécharger et dézipper ce dépôt github
-- Créer un fichier décrivant vos laboratoires à l'instar du fichier `data/stable/labCriteria.csv`
+- Créer un fichier décrivant vos laboratoires à l'instar du fichier [data/stable/labCriteria.csv](./data/stable/labCriteria.csv)
 - Personnaliser les modèles de mails présents dans `data/stable/`
 - Créer un fichier csv pour récupérer les données auteurs affiliés à votre établissement, avec les colonnes `key, surname, forename, initial, labname, orcid, mail, scopusId`
 - Créer le fichier `path_and_perso_data.json` dans le dossier  `data/stable/` avec vos informations en respectant le modèle suivant : 
 
 ```json
 {
-	"path_labCriteria":"chemin et nom du fichier décrivant les laboratoires. voir ./data/stable/labCriteria.csv",
-	"path_validAuthDb": "chemin et nom de la base de données locale en .csv sur les auteurs de votre établissement",
+	"path_labCriteria":"chemin + nom du fichier décrivant les laboratoires. voir ./data/stable/labCriteria.csv",
+	"path_validAuthDb": "chemin + nom de la base de données locale en .csv sur les auteurs de votre établissement",
 	"univ_scopusId" : 60029937,
 	"univ_halStructId" : 81173,
 	"perso_hal_contributorId" : 751146,
@@ -53,7 +53,7 @@ Voir les imports effectués : [contributorId_i/751146](https://hal.archives-ouve
 	"perso_login_hal" : "login compte hal",
 	"perso_mdp_hal" : "mdp compte HAL",
 	"perso_email": "your.email@univ.fr",
-	"alias_email" : "hal.bib@uvsq.fr",
+	"alias_email" : "un alias pour assurer le suivi des mails envoyés en équipe hal.bib@uvsq.fr",
 	"perso_scopusApikey" : false,
 	"perso_scopusInstToken": false,
 	"perso_login_server": "login pour se connecter au serveur",
