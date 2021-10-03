@@ -1,7 +1,7 @@
 # Imports HAL et incitation à l'accès ouvert
 
 
-Après avoir publié un article sientifique les auteurs reçoivent des spams les invitant à payer pour publier dans des revues prédatrices. Ce dépôt reproduit la même méthode mais pour un fin plus éthique : inviter les auteurs à partager en **accès ouvert** leur article, dans HAL, comme l'autorise la loi [Pour une république numérique](https://www.ouvrirlascience.fr/guide-application-loi-republique-numerique-article-30-ecrits-scientifiques-version-courte/) ?
+Après avoir publié un article sientifique les auteurs reçoivent des spams les invitant à payer pour publier dans des revues prédatrices. Ce dépôt reproduit la même méthode mais pour une fin plus éthique : inviter les auteurs à partager en **accès ouvert** leur article dans HAL, comme l'autorise la loi [Pour une république numérique](https://www.ouvrirlascience.fr/guide-application-loi-republique-numerique-article-30-ecrits-scientifiques-version-courte/).
 
 
 Le code partagé permet : 
