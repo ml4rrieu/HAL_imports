@@ -6,9 +6,11 @@ Après avoir publié un article sientifique les auteurs reçoivent des spams les
 
 Le code partagé permet : 
 
-* de verser automatiquement dans HAL les métadonnées Scopus des publications
+* d'enrichir les métadonnées des publications de Scopus et de verser automatiquement dans HAL
 
-* d'envoyer aux auteurs des mails les incitant à déposer leur article en accès ouvert (voir [modèle de mail](./data/stable/message.txt))
+* de constituer une base de données locale des auteurs affiliés à son établissement
+
+* d'envoyer des mails aux auteurs les incitant à déposer leur article en accès ouvert (voir [modèle de mail](./data/stable/message.txt))
 
 <br />
 
