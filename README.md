@@ -1,7 +1,7 @@
 # Imports HAL et incitation à l'accès ouvert
 
 
-Après avoir publié un article sientifique les auteurs reçoivent souvent des mails les invitant à payer pour publier dans des revues prédatrices. Et si nous utilisions le même procédé mais pour une fin plus éthique : inviter les auteurs à partager en **accès ouvert** leur article, dans HAL, comme l'autorise la loi [Pour une république numérique](https://www.ouvrirlascience.fr/guide-application-loi-republique-numerique-article-30-ecrits-scientifiques-version-courte/) ?
+Après avoir publié un article sientifique les auteurs reçoivent des spams les invitant à payer pour publier dans des revues prédatrices. Ce dépôt reproduit la même méthode mais pour un fin plus éthique : inviter les auteurs à partager en **accès ouvert** leur article, dans HAL, comme l'autorise la loi [Pour une république numérique](https://www.ouvrirlascience.fr/guide-application-loi-republique-numerique-article-30-ecrits-scientifiques-version-courte/) ?
 
 
 Le code partagé permet : 
@@ -13,23 +13,26 @@ Le code partagé permet :
 <br />
 
 ***
-## Statistiques
 
-A l'UVSQ après 10 mois  : 
+## News
 
-* 600 publications importées
+* 2021-09, Publication dans le BBF _Ouvrir l’accès aux dernières publications de son établissement avec HAL. Retour d’expérience sur la mise en place d’un chantier d’import à l'UVSQ_ [hal-03339754](https://hal.archives-ouvertes.fr/hal-03339754)
 
-* 300 notices vérifiées déjà présentes dans HAL
+* 2021-06, Présentation au GT bibliométrie de l'URFIST (voir [slides](https://speakerdeck.com/mlarrieu/science-ouverte-et-suivi-des-publications-exemple-de-realisation-a-luvsq-hal-plus-scopus-plus-unpaywall))
 
-* 370 emails envoyés
+* 2021-04, Alignement IDREF avec l'ABES de la base de données auteurs : ~ 820 auteurs (sur 1150) alignés automatiquement
 
-* 100 pdf déposées par le SCD ou les auteurs
+
+## Statistiques après 10 mois de chantier
+
+![statistiques d'import à 10 mois](fig_stat_10_mois.png)
+
 
 Voir les imports effectués : [contributorId_i/751146](https://hal.archives-ouvertes.fr/search/index/q/*/contributorId_i/751146)
 
-<br />
-
 ***
+
+<br />
 
 ## Reproduire le code pour son établissement
 
